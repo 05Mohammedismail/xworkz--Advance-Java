@@ -1,0 +1,21 @@
+package com.xworkz.foodservlet;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/food", loadOnStartup = 1)
+public class FoodServlet extends HttpServlet{
+	
+	public FoodServlet() {
+		System.out.println("Created Food servlet");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Init of Food Servlet");
+		super.init(config);
+	}
+
+}

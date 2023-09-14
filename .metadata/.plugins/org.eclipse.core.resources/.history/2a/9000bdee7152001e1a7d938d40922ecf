@@ -1,0 +1,20 @@
+package com.xworkz.productservlet;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/airport", loadOnStartup = 1)
+public class AirportServlet extends HttpServlet{
+	
+	public AirportServlet() {
+		System.out.println("Created Airport Servlet");
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Init of Airport Servlet");
+		super.init(config);
+	}
+}

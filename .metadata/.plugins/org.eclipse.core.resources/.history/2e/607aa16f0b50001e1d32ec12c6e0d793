@@ -1,0 +1,9 @@
+package com.xworkz.messagebox.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet (urlPatterns = "/message.box")
+public class MessageServlet extends HttpServlet{
+
+}

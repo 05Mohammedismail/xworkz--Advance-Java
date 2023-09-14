@@ -1,0 +1,13 @@
+package com.xworkz.productservlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/product",  loadOnStartup = 1)
+public class ProductServlet extends HttpServlet{
+	
+	public ProductServlet() {
+		System.out.println("Created Product servlet");
+	}
+
+}

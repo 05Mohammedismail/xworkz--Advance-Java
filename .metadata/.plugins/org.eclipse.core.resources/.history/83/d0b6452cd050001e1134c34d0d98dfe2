@@ -1,0 +1,21 @@
+package com.xworkz.registerationservlet;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet {
+	
+	public RegisterServlet() {
+		System.out.println("Created Register Servlet");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+	System.out.println("Init method of Register Servlet");
+		super.init(config);
+	}
+
+}

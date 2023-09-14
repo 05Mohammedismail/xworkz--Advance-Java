@@ -1,0 +1,45 @@
+package com.xworkz.productservlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = "/product",  loadOnStartup = 1)
+public class ProductServlet extends HttpServlet{
+	
+	public ProductServlet() {
+		System.out.println("Created Product servlet");
+	}
+	
+	@Override
+	public void init() throws ServletException {
+	System.out.println("Init of Product Servlet");
+		super.init();
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Service of Product Servlet");
+		super.service(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	System.out.println("doPost of Product Servlet");
+	
+	req.getParameter("name");
+	req.getParameter("price");
+	req.getParameter("type");
+	req.getParameter("quantity");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("productSuccess");
+	dispatcher.forward(req, resp);
+	
+	
+	}
+
+}

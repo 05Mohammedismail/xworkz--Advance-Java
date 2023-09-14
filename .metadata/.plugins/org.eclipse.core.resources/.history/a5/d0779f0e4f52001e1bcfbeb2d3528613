@@ -1,0 +1,20 @@
+package com.xworkz.productservlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/product",  loadOnStartup = 1)
+public class ProductServlet extends HttpServlet{
+	
+	public ProductServlet() {
+		System.out.println("Created Product servlet");
+	}
+	
+	@Override
+	public void init() throws ServletException {
+	System.out.println("Init of product servlet");
+		super.init();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.xworkz.messagebox.servlet;
+
+public class MessageServlet {
+
+}

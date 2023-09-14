@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  </head>
+
+</head>
+<style>
+ * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "poppins", sans-serif;
+}
+
+.body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100hv;
+background: rgb(63, 63, 109);
+}
+
+.wrapper{
+width: 420px;
+background: transparent;
+border: 2px solid gray;
+backdrop-filter: blur(20px);
+box-shadow: 0 0 10px black;
+color: white;
+border-radius: 10px;
+padding: 30px 40px; 
+}
+
+.wrapper h1{
+font-size: 36px;
+text-align: center;
+font-weight: 600;
+}
+
+.wrapper .input-box{
+width: 100%;
+height: 50px;
+margin: 30px 0;
+}
+
+.input-box input{
+width: 100%;
+height: 100%;
+background: transparent;
+border: none;
+outline: none;
+border: 2px solid lightgray;
+border-radius: 40px; 
+color: white;
+font-size: 16px;
+padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+color: white;
+}
+
+.wrapper .remember-me{
+display: flex;
+justify-content: space-between;
+font-size: 14.5px;
+margin: -15px 0 15px 35px;
+}
+
+.remember-me label input{
+ color: white;
+ margin-right:3px; 
+}
+
+.remember-me a{
+color: white;
+text-decoration: none;
+}
+
+.remember-me a:hover{
+text-decoration: underline;
+}
+
+.wrapper .btn{
+width: 100%;
+height: 45px;
+background: white;
+border: none;
+outline: none;
+border-radius: 40px;
+box-shadow: 0 0 10px black;
+cursor: pointer;
+font-size: 16px;
+color: black;
+font-weight: 600; 
+} 
+
+.wrapper .already-have{
+font-size: 14.5px;
+text-align: center;
+margin: 20px 0 15px;
+}
+
+.already-have p a{
+color: white;
+text-decoration: none;
+font-weight: 600;
+}
+
+.already-have p a:hover{
+text-decoration: underline;
+}
+
+.navbar{
+background: rgb(63, 63, 109);
+margin-bottom: 10px;
+}
+
+
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand">Message Box</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="body">
+<div class="wrapper">
+ <form action="">
+ 	<h1>LOGIN</h1>
+ 	
+ 	<div class = "input-box">
+ 	<input type="text" placeholder="First Name" required="required">
+ 	</div>
+ 	
+ 	<div class = "input-box">
+ 	<input type="text" placeholder="Last Name" required="required">
+ 	</div>
+ 	
+ 	<div class = "input-box">
+ 	<input type="email" placeholder="Email" required="required">
+ 	</div>
+ 	
+ 	<div class = "input-box">
+ 	<input type="number" placeholder="Mobile Number" required="required">
+ 	</div>
+ 	
+ 	<div class = "input-box">
+ 	<input type="password" placeholder="password" required="required">
+ 	</div>
+ 	
+ 	<div class = "input-box">
+ 	<input type="password" placeholder="Confirm-password" required="required">
+ 	</div>
+ 	
+ 	<div class="remember-me">
+ 	<label> <input type="checkbox"> I Accept all <a href="#">Terms</a> & <a href="#">Privacy Policy</a> </label>
+ 	</div>
+ 	
+ 	<input type="submit" class="btn" value="Register">
+ 	
+ 	
+ 	<div class="already-have">
+ 	<p> Already have an account? <a href="#"> SignIn</a> </p>
+ 	</div>
+ 	
+ 	
+ 
+ </form>
+</div>
+</div>     
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+</html>

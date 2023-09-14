@@ -1,0 +1,13 @@
+package com.xworkz.registerationservlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet {
+	
+	public RegisterServlet() {
+		System.out.println("Created Register Servlet");
+	}
+
+}

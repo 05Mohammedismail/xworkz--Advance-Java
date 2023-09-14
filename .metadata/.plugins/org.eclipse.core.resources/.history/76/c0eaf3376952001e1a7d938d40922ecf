@@ -1,0 +1,53 @@
+package com.xworkz.productservlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = "/product",  loadOnStartup = 1)
+public class VendorServlet extends HttpServlet{
+	
+	public VendorServlet() {
+		System.out.println("Created Vendor servlet");
+	}
+	
+	@Override
+	public void init() throws ServletException {
+	System.out.println("Init of Vendor Servlet");
+		super.init();
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Service of Vendor Servlet");
+		super.service(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	System.out.println("doPost of Vendor Servlet");
+	
+	String name = req.getParameter("name");
+	String price = req.getParameter("gst");
+	String type = req.getParameter("owner");
+	String quantity = req.getParameter("location");
+	System.out.println("Name : " + name);
+	System.out.println("Price : " + price);
+	System.out.println("Type : " + type);
+	System.out.println("Quantity : " + quantity);
+	
+	req.setAttribute("Name", name);
+	req.setAttribute("GSTnumber", price);
+	req.setAttribute("Owner", type);
+	req.setAttribute("Location", quantity);
+	
+	RequestDispatcher dispatcher = req.getRequestDispatcher("productSuccess.jsp");
+	dispatcher.forward(req, resp);
+	}
+
+}

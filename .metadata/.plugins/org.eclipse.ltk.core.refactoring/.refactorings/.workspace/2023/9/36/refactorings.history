@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sep08_Servlets(HTML content as the HTTP)&apos; to &apos;Sep08_Servlets(HTML content as the HTTP response)&apos;" description="Rename resource &apos;Sep08_Servlets(HTML content as the HTTP)&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Sep08_Servlets(HTML content as the HTTP)" name="Sep08_Servlets(HTML content as the HTTP response)" stamp="1694272838751" updateReferences="true"/>
+</session>

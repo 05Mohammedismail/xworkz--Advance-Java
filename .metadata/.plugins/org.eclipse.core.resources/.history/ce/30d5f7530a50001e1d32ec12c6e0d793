@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Hi send your message from here</h1>
+<form action="ping.pong">
+Name <input type="text" name="name">
+Message <input type="text" name="msg">
+<input class="send" type="submit" value="send">
+<a href="index.html">Back to Home</a>
+</form>
+</body>
+</html>

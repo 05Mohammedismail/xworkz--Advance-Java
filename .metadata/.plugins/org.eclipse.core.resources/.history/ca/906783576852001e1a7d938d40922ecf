@@ -1,0 +1,13 @@
+package com.xworkz.productservlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "player", loadOnStartup = 1)
+public class PlayerServlet extends HttpServlet{
+	
+	public PlayerServlet() {
+		System.out.println("Created Player Servlet");
+	}
+
+}

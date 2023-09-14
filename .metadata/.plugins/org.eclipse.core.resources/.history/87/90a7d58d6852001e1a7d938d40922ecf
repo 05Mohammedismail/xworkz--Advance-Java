@@ -1,0 +1,30 @@
+package com.xworkz.productservlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = "player", loadOnStartup = 1)
+public class PlayerServlet extends HttpServlet{
+	
+	public PlayerServlet() {
+		System.out.println("Created Player Servlet");
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Init in Player Servlet");
+		super.init(config);
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Service in Player Servlet");
+		super.service(req, resp);
+	}
+}

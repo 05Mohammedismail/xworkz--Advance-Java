@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="8">
+    <list key="modules" value0="Sep06_Servlets::org.eclipse.jst.jee.server:Sep06_Servlets::jst.web::3.1" value1="Sep08_Servlets(HTML content as the HTTP response)::org.eclipse.jst.jee.server:Sep08_Servlets(HTML content as the HTTP response)::jst.web::3.1" value2="Sep11_RegisterationForm::org.eclipse.jst.jee.server:Sep11_RegisterationForm::jst.web::3.1" value3="Sep13_JSP::org.eclipse.jst.jee.server:Sep13_JSP::jst.web::3.1" value4="Sep05_SimpleHTML::org.eclipse.jst.jee.server:Sep05_SimpleHTML::jst.web::3.1" value5="Sep14_JSP_WrapperClasses::org.eclipse.jst.jee.server:Sep14_JSP_WrapperClasses::jst.web::3.1"/>
+  </server>
+</servers>
