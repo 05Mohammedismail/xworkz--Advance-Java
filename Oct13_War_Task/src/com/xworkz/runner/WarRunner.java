@@ -53,19 +53,21 @@ public class WarRunner {
 		WarDTO dto2 = new WarDTO(2, LocalDate.of(1939, 9, 1), LocalDate.of(1945, 9, 2), countryCollection2);
 
 		// War DTO collection
-		Collection<WarDTO> wars = new HashSet<WarDTO>();
-		wars.add(dto1);
-		wars.add(dto2);
+		Collection<WarDTO> wars1 = new HashSet<WarDTO>();
+		wars1.add(dto1);
 
-		presidentByCountry(wars, "Germany");
+		Collection<WarDTO> wars2 = new HashSet<WarDTO>();
+		wars2.add(dto2);
 
-		presidents(wars);
+		presidents(wars1);
 
-		countries(wars);
+		countries(wars1);
 
-		detailsByWarDate(wars, LocalDate.of(1939, 9, 1), LocalDate.of(1945, 9, 2));
+		presidentByCountry(wars1, "Germany");
 
-		detailsByContinent(wars, "Asia");
+		detailsByWarDate(wars1, LocalDate.of(1914, 7, 28), LocalDate.of(1918, 11, 11));
+
+		detailsByContinent(wars2, "Asia");
 
 	}
 
@@ -75,7 +77,7 @@ public class WarRunner {
 				.filter(country -> country.getName().equals(countryName))
 				.map(president -> president.getPresident().getName()).collect(Collectors.toList());
 
-		presidents.forEach(ref -> System.out.println("The president of " + countryName + " is " + ref));
+		presidents.forEach(ref -> System.out.println("The President of " + countryName + " is : " + ref));
 		System.out.println();
 	}
 
@@ -84,39 +86,54 @@ public class WarRunner {
 				.flatMap(war -> war.getCountry().stream().map(country -> country.getPresident().getName()))
 				.collect(Collectors.toList());
 
-		System.out.println("All Presidents saved are ");
+		System.out.print("Presidents of War ");
+		wars.stream().forEach(war -> System.out.println(war.getWarId()));
 		presidents.forEach(ref -> System.out.println(ref));
 		System.out.println();
 	}
 
 	public static void countries(Collection<WarDTO> wars) {
 
-		List<String> countries = wars.stream().flatMap(m -> m.getCountry().stream().map(mu -> mu.getName()))
+		List<String> countries = wars.stream()
+				.flatMap(war -> war.getCountry().stream().map(country -> country.getName()))
 				.collect(Collectors.toList());
 
-		System.out.println("All Countries saved are ");
+		System.out.print("Countries of War ");
+		wars.stream().forEach(war -> System.out.println(war.getWarId()));
 		countries.forEach(ref -> System.out.println(ref));
 		System.out.println();
 	}
 
 	public static void detailsByWarDate(Collection<WarDTO> wars, LocalDate startDate, LocalDate endDate) {
-		Set<WarDTO> allData = wars.stream()
-				.filter(war -> war.getStartDate().equals(startDate) && war.getEndDate().equals(endDate))
-				.collect(Collectors.toSet());
+
+		boolean allData = wars.stream()
+				.allMatch(war -> war.getStartDate().equals(startDate) && war.getEndDate().equals(endDate));
 
 		System.out.println("War details between " + startDate + " and " + endDate + " are ");
-		allData.forEach(ref -> System.out.println(ref));
+		if (allData) {
+			wars.stream().forEach(ref -> System.out.println(ref));
+		} else {
+			System.err.println("War not found");
+		}
+
 		System.out.println();
 
 	}
 
 	public static void detailsByContinent(Collection<WarDTO> wars, String continentName) {
-		List<WarDTO> allData = wars.stream().filter(
-				war -> war.getCountry().stream().anyMatch(continent -> continent.getContinent().equals(continentName)))
-				.collect(Collectors.toList());
-
+		boolean allData = wars.stream().anyMatch(
+				war -> war.getCountry().stream().anyMatch(continent -> continent.getContinent().equals(continentName)));
+		
 		System.out.println("War details by Continent " + continentName + " are ");
-		allData.forEach(ref -> System.out.println(ref));
+		if (allData) {
+
+			List<WarDTO> continent = wars.stream().collect(Collectors.toList());
+			continent.forEach(ref -> System.out.println(ref));
+
+		} else {
+			System.err.println("Not found");
+		}
+
 		System.out.println();
 
 	}
