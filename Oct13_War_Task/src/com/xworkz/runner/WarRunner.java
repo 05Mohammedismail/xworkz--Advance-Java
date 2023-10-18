@@ -59,11 +59,11 @@ public class WarRunner {
 		Collection<WarDTO> wars2 = new HashSet<WarDTO>();
 		wars2.add(dto2);
 
-		presidents(wars1);
+		presidents(wars2);
 
 		countries(wars1);
 
-		presidentByCountry(wars1, "Germany");
+		presidentByCountry(wars1, "Austria");
 
 		detailsByWarDate(wars1, LocalDate.of(1914, 7, 28), LocalDate.of(1918, 11, 11));
 
@@ -73,17 +73,17 @@ public class WarRunner {
 
 	public static void presidentByCountry(Collection<WarDTO> wars, String countryName) {
 
-		List<String> presidents = wars.stream().flatMap(war -> war.getCountry().stream())
+		PresidentDTO presidents = wars.stream().flatMap(war -> war.getCountry().stream())
 				.filter(country -> country.getName().equals(countryName))
-				.map(president -> president.getPresident().getName()).collect(Collectors.toList());
+				.map(president -> president.getPresident()).findFirst().get();
 
-		presidents.forEach(ref -> System.out.println("The President of " + countryName + " is : " + ref));
+		System.out.println("The President of " + countryName + " is : " + presidents);
 		System.out.println();
 	}
 
 	public static void presidents(Collection<WarDTO> wars) {
-		List<String> presidents = wars.stream()
-				.flatMap(war -> war.getCountry().stream().map(country -> country.getPresident().getName()))
+		List<PresidentDTO> presidents = wars.stream()
+				.flatMap(war -> war.getCountry().stream().map(country -> country.getPresident()))
 				.collect(Collectors.toList());
 
 		System.out.print("Presidents of War ");
@@ -94,8 +94,8 @@ public class WarRunner {
 
 	public static void countries(Collection<WarDTO> wars) {
 
-		List<String> countries = wars.stream()
-				.flatMap(war -> war.getCountry().stream().map(country -> country.getName()))
+		List<CountryDTO> countries = wars.stream()
+				.flatMap(war -> war.getCountry().stream().map(country -> country))
 				.collect(Collectors.toList());
 
 		System.out.print("Countries of War ");
